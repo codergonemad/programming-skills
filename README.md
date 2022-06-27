@@ -1,2 +1,2 @@
-# Questions you didnt get
+# Questions you didnt get.
 
