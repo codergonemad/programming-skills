@@ -1,0 +1,20 @@
+//https://leetcode.com/problems/subtract-the-product-and-sum-of-digits-of-an-integer/
+class Solution {
+    public int subtractProductAndSum(int n) {
+        List<Integer> seen=new ArrayList<>();
+        while(n!=0)
+        {
+            seen.add(n%10);
+            n=n/10;
+        }
+        int sum=0;
+        int product=1;
+        for(int i=0;i<seen.size();i++)
+        {
+            sum+=seen.get(i);
+            product*=seen.get(i);
+        }
+        return product-sum;
+        
+    }
+}
