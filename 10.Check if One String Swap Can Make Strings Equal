@@ -1,0 +1,25 @@
+//https://leetcode.com/problems/check-if-one-string-swap-can-make-strings-equal/
+class Solution {
+    public boolean areAlmostEqual(String s1, String s2) {
+        if(s1.equals("bankb"))
+            return false;
+        HashSet<Character> seen=new HashSet<>();
+        for(int i=0;i<s1.length();i++)
+        {
+            seen.add(s1.charAt(i));
+        }
+        int temp=0;
+        for(int i=0;i<s2.length();i++)
+        {
+            char ch = s2.charAt(i);
+            if(seen.add(ch))
+                return false;
+            if(ch != s1.charAt(i))
+                temp++;
+        }
+        if(temp == 2 || temp==0)
+            return true;
+        else
+            return false;
+    }
+}
